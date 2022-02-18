@@ -1,28 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View} from 'react-native';
+import React from 'react';
 
-import Constants from 'expo-constants';
+import 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-{/*import Header from './components/Header';*/}
 import HomeScreen from './screens/HomeScreen';
-import FabButton from './components/FabButton';
+import MapsAddMarker from './screens/MapsAddMarker';
 
-export default function App() {
+const Stack = createStackNavigator();
 
-  return (
-    <View style={styles.container}>
-      <StatusBar style="auto" />
-      {/*<Header/>*/}
-      <HomeScreen/>
-      <FabButton style={{bottom: 150, right: 50}}/>
-    </View>
-  );
+export default function App(){
+        return(
+        <NavigationContainer>
+            <Stack.Navigator>
+                    <Stack.Screen name='HomeScreen' component={HomeScreen} options= {{headerShown: false}}/>
+                    <Stack.Screen name='MapsAddMarker' component={MapsAddMarker} options= {{title: 'Adicionar Localização'}}/>
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: Constants.statusBarHeight,
-    backgroundColor: '#fff',
-  },
-});

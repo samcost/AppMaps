@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, TouchableWithoutFeedback, Animated} from 'react-native';
-import {AntDesign, Entypo} from '@expo/vector-icons'
+import {View, StyleSheet, TouchableWithoutFeedback, Animated} from 'react-native';
+import {AntDesign} from '@expo/vector-icons'
 
-export default class FabButton extends Component /*({navigation})*/{
+
+export default class FabButton extends Component {
 
     animation = new Animated.Value(0);
 
@@ -53,7 +54,7 @@ export default class FabButton extends Component /*({navigation})*/{
                     </Animated.View>
                 </TouchableWithoutFeedback>
 
-                <TouchableWithoutFeedback /*onPress={() => navigation.navigate('AddMarker')}*/>
+                <TouchableWithoutFeedback  onPress={() => this.props.navigation.navigate('MapsAddMarker')}>
                     <Animated.View style={[styles.button, styles.submenu, plusStyle]}>
                         <AntDesign name='plus' size={25} color='#FFF'/>
                     </Animated.View>
@@ -64,6 +65,7 @@ export default class FabButton extends Component /*({navigation})*/{
                         <AntDesign name='bars' size={28} color='#FFF'/>
                     </Animated.View>
                 </TouchableWithoutFeedback>
+                
             </View>
         );
     }
@@ -86,7 +88,7 @@ const styles = StyleSheet.create({
         shadowRadius: 10,
         shadowOpacity: 0.3,
         shadowOffset: {
-            height: 10,
+        height: 10,
         }
     },
     menu: {

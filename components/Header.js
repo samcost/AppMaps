@@ -17,18 +17,18 @@ export default function Header(){
 const styles = StyleSheet.create({
 
     header:{
-      flexDirection: 'row',
-      height: 55,
-      alignItems: 'center',
-      justifyContent:'space-between',
-      backgroundColor: '#e6e6e6',
+        flexDirection: 'row',
+        height: 55,
+        alignItems: 'center',
+        justifyContent:'space-between',
+        backgroundColor: '#e6e6e6',
     },
     icones:{
-      flexDirection: 'row',
-      color:'black',
-      marginRight: 10,
-      marginLeft:10,
-      alignSelf: 'center',
+        flexDirection: 'row',
+        color:'black',
+        marginRight: 10,
+        marginLeft:10,
+        alignSelf: 'center',
     },
     text:{
         fontWeight: 'bold',
